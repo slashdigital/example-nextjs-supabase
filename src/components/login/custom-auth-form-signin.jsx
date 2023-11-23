@@ -30,7 +30,7 @@ export default function CustomAuthFormSignin({ session }) {
       email: data.username,
       password: data.password,
     });
-    router.replace("/dashboard/home");
+    router.replace("/dashboard");
   };
 
   const handleSignOut = async () => {
