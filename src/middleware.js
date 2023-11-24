@@ -1,5 +1,3 @@
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 import acceptLanguage from "accept-language";
 
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
@@ -19,13 +17,6 @@ export async function middleware(req) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  // const {
-  //   data: { session },
-  // } = await supabase.auth.getSession();
-
-  // console.log('sdfsdsf', await supabase.rpc('get_my_claim', {
-  //   claim: 'superadmin'
-  // }));
 
   let lng;
   if (req.cookies.has(cookieName))
